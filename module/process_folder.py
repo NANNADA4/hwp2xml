@@ -18,7 +18,7 @@ def process_folder(input_path):
             if not file.lower().endswith('.hwp'):
                 continue
             new_hwp_file_path = create_folder(root, file)
-            print(f"{file}변환 중...")
+            print(f"{file} 변환 중...")
             hwp2xml(new_hwp_file_path, input_path)
 
 
