@@ -24,7 +24,8 @@ def process_folder(input_path):
 
 def create_folder(root, file):
     """hwp문서 발견시 파일명으로 폴더를 생성하고 파일을 이동합니다"""
-    hwp_folder_path = os.path.join(root, os.path.splitext(file)[0])
+    hwp_folder_path = os.path.join(
+        root, str(os.path.splitext(file)[0]).strip())
     hwp_file_path = os.path.join(root, file)
 
     if not os.path.exists(hwp_folder_path):
