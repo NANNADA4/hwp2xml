@@ -49,6 +49,6 @@ def hwp2xml(hwp_file, input_path):
         hwp.SaveAs(f"{hwp_file_only_name}.xml", "XML")
         hwp.Save()
         hwp.Quit()
-    except Exception:  # pylint: disable=W0718
-        print("변환 오류")
+    except Exception as e:  # pylint: disable=W0718
+        print(f"변환 오류 : {e}")
         write_log(os.path.join(input_path, 'log.txt'), hwp_file)
