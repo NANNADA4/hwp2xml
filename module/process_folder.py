@@ -15,7 +15,7 @@ def process_folder(input_path):
     """입력받은 폴더를 순회하여 HWP문서 스크립트를 진행합니다"""
     for root, _, files in os.walk(input_path):
         for file in natsorted(files):
-            if not file.lower().endswith('.hwp'):
+            if not (file.lower().endswith('.hwp') or file.lower().endswith('.hwpx')):
                 continue
             new_hwp_file_path = create_folder(root, file)
             print(f"{file} 변환 중...")
